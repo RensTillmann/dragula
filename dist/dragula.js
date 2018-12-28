@@ -476,7 +476,9 @@ function dragula (initialContainers, options) {
     if (_mirror) {
       classes.rm(o.mirrorContainer, 'gu-unselectable');
       touchy(documentElement, 'remove', 'mousemove', drag);
-      getParent(_mirror).removeChild(_mirror);
+      if (getParent(_mirror)) {
+      	getParent(_mirror).removeChild(_mirror);
+      }
       _mirror = null;
     }
   }
